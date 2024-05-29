@@ -1,0 +1,9 @@
+services:
+  cs-subscribe-user-api-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/app/apigateway
+    tty: true
+    working_dir: /app/apigateway

@@ -1,0 +1,15 @@
+{
+  "name": "User.API",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.vscodeintellicode-csharp",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
