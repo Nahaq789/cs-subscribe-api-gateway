@@ -1,0 +1,48 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Visual Studio files
+.vs/
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+
+# Compiled output
+*.exe
+*.dll
+*.nupkg
+*.snupkg
+
+# Logs
+logs/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Rider
+.idea/
+
+# VisualStudio temporary files
+.vs/
+
+# VisualStudio code coverage results
+*.coverage
+*.coveragexml
+
+# Others
+bin/
+obj/
+/packages
+/.vs
+/.vscode

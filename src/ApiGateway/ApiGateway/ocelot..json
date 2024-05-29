@@ -1,0 +1,28 @@
+{
+  "Routes": [
+    {
+      "UpstreamPatjTemplate": "/api/v1/auth/login",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/v1/auth/login"
+    },
+    {
+      "UpstreamPatjTemplate": "/api/v1/auth/logout",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/v1/auth/logout"
+    }
+  ]
+}
