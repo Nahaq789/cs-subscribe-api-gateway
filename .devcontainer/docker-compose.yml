@@ -1,5 +1,6 @@
+version: '3.8'
 services:
-  cs-subscribe-user-api-dev:
+  cs-subscribe-apigateway-dev:
     build:
       context: .
       dockerfile: Dockerfile
@@ -7,3 +8,10 @@ services:
       - ../:/app/apigateway
     tty: true
     working_dir: /app/apigateway
+    networks:
+      - cs-subscribe
+
+networks:
+  cs-subscribe:
+    external: true
+
