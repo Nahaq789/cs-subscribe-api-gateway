@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
     .AddAuthentication()
-    .AddJwtBearer(option =>
+    .AddJwtBearer("arebdbtcsr", option =>
     {
         option.TokenValidationParameters =
         new TokenValidationParameters
@@ -25,6 +25,12 @@ builder.Services
         };
     });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader());
+});
+
 builder.Services.AddOcelot(builder.Configuration);
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
 
@@ -33,5 +39,6 @@ var app = builder.Build();
 app.UseAuthorization();
 app.UseAuthentication();
 
+app.UseCors("AllowSpecificOrigin");
 await app.UseOcelot();
 await app.RunAsync();
