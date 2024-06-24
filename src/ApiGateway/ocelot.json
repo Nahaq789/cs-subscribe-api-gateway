@@ -3,26 +3,35 @@
     {
       "UpstreamPathTemplate": "/api/v1/auth/login",
       "UpstreamHttpMethod": ["Post"],
+
       "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/v1/auth/login",
       "DownstreamHostAndPorts": [
         {
           "Host": "cs-subscribe-authorization-api",
           "Port": 8080
         }
       ],
-      "DownstreamPathTemplate": "/api/v1/auth/login"
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "arebdbtcsr",
+        "AllowedScopes": []
+      }
     },
     {
-      "UpstreamPathTemplate": "/api/v1/auth/logout",
+      "UpstreamPathTemplate": "/api/v1/user/create",
       "UpstreamHttpMethod": ["Post"],
+
+      "DownstreamPathTemplate": "/api/v1/user/create",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 80
+          "Host": "cs-subscribe-user-api",
+          "Port": 8080
         }
-      ],
-      "DownstreamPathTemplate": "/api/v1/auth/logout"
+      ]
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5247"
+  }
 }
