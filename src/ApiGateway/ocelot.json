@@ -13,7 +13,7 @@
         }
       ],
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "arebdbtcsr",
+        "AuthenticationProviderKey": "",
         "AllowedScopes": []
       }
     },
@@ -28,7 +28,28 @@
           "Host": "cs-subscribe-user-api",
           "Port": 8080
         }
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/v1/user/update",
+      "UpstreamHttpMethod": ["Post"],
+
+      "DownstreamPathTemplate": "/api/v1/user/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cs-subscribe-user-api",
+          "Port": 8080
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     }
   ],
   "GlobalConfiguration": {
