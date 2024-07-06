@@ -9,7 +9,7 @@ public class JwtTokenBehavior
     public static void JwtBehavior(AuthenticationBuilder authBuilder, IConfiguration configuration)
     {
 
-        authBuilder.AddJwtBearer("arebdbtcsr", option =>
+        authBuilder.AddJwtBearer("Bearer", option =>
         {
             option.TokenValidationParameters =
             new TokenValidationParameters
