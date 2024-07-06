@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  cs-subscribe-apigateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - cs-subscribe
+    ports:
+      - "5247:8080"
+    tty: true
+
+networks:
+  cs-subscribe:
+    external: true
